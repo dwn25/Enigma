@@ -1,4 +1,3 @@
-README.txt
 David William Nartey
 
 Program is run from command line/terminal.
