@@ -1,0 +1,55 @@
+David William Nartey
+DISCUSSION.txt<br />
+Tested taking it more than 10 letters and padding<br />
+thefirsttenletters returns thefirsttenlettersxx<br />
+Test Passed<br />
+
+Tested the initialization of the motors according to the starting position<br />
+Tested with 000<br />
+Key offset returned correct number<br />
+
+Tested the rotation of individual motors<br />
+Each motor rotation adding 1 to the key offset for that specific rotor.<br />
+Returned value passed<br />
+
+Test permutations according to the order established.<br />
+"YUMMYRAMEN" in permutation "3145926870"<br />
+Expected "MUYRNMAEMY"<br />
+Returned "MUYRNMAEMY"<br />
+Test Passed<br />
+
+Tested reversing the permutation for decryption<br />
+"MUYRNMAEMY" is permutated according to the order "3145926870" back to "0123456789"<br />
+Expected "YUMMYRAMEN"<br />
+Returned "YUMMYRAMEN"<br />
+Test Passed<br />
+
+Tested encryption of "YUMMRAMEN" according to the discussion board with key<br />
+configuration set at "000" and configuration of permutation set at "0123456789"<br />
+Expected Value: "J3VK9D0TZT"<br />
+Returned Value: "J3VK9VKHNL"<br />
+ANALYSIS: Rotation of the middle rotor creates an issue with regard to the<br />
+arithmetic for finding the corresponding <br />
+
+Conclusion:<br />
+Encryption Permutation functions<br />
+Encryption works up to the 6 character<br />
+Decryption Permutation functions<br />
+Decryption not implemented <br />
+
+
+Discussion<br />
+The Enigma machine has a total complexity of 150,738,274,937,250. This is because of the 
+three rotors having 17,576 possibilities. Each of the six wheels will therefore have a 
+possibility of 6*17,576 = 105,456. And with the addition of the plugboard, the total 
+complexity(number of possible states) increases to 150,738,274,937,250.
+Our implementation of the enigma machine has three rotors each with 36 possibilities. 
+Therefore there are 36*36*36 = 46,656 possible entries. The permutation consists of 10 
+unique digits with a possible order of 10! which is 3,628,800. The initialization of the
+rotors and the entries would then be 3!(36^3) = 279,936. The total possible entries would 
+therefore be 1,015,831,800,000. This in comparison with the original Enigma machine is far
+less complex. The bombe technique on this implementation would identify the most likely 
+possible initial positions of the motor in relation to the permutation before a computer or
+superComputer could be made to attempt the remaining possible combinations until a viable 
+message was decrypted. The bombe technique would be easier on our implementation due to it
+being 149 trillion less complex. 
